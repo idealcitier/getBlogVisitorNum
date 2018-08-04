@@ -1,5 +1,5 @@
-import getUrl
+import getUrl as t
 
 filename = '../blogUrl.txt'
 
-getUrl.getUrl(filename)
+t.getUrl(filename)
