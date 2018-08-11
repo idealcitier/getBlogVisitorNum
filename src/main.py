@@ -1,12 +1,26 @@
-import getUrl as t
-import urllib
+import getUrl
 from urllib import request
-from bs4 import BeautifulSoup
 import re
-import requests
+import time
+import os
+
+targetFile = 'viewAndRank.txt'
+
+
+if os.path.exists(targetFile):
+	pass
+	print(targetFile, ' is existed')
+else:
+	with open(targetFile, 'w') as t:
+		t.write('date\t\t\tViewNum\t\tRankNum\n') 
+		t.close()
+
+now = time.strftime('%Y-%m-%d %H:%M:%S')
+
+
 filename = '../blogUrl.txt'
 
-url_name = t.getUrl(filename)
+url_name = getUrl.getUrl(filename)
 
 html = request.urlopen(url_name).read()
 
@@ -18,10 +32,14 @@ view_result = view_pattern.findall(str(html))
 rank_result = rank_pattern.findall(str(html))
 
 
-view_num = int(view_result[0].split("=\"")[1])
-rank_num = int(rank_result[0].split("=\"")[1])
+view_num = view_result[0].split("=\"")[1]
+rank_num = rank_result[0].split("=\"")[1]
 print("view_num=",view_num)
 print("rank_view=",rank_num)
 
 
+with open('viewAndRank.txt', 'a') as t:
+	info = now + '\t' + view_num + '\t\t'+ rank_num + '\n'
+	t.write(info)
+	t.close()
 
