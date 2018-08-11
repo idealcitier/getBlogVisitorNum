@@ -6,11 +6,11 @@ def getUrl(filename):
 	fid = open(filename, 'r+')
 	lines = fid.readlines()
 
-	print(type(lines))
+#	print(type(lines))
 
 	for line in lines:
 		pass
-	print(line)
+#	print(line)
 	return line
 
 # getUrl(filename)
