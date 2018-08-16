@@ -5,8 +5,8 @@ import re
 import time
 import os
 
-targetFile = '../viewAndRank.txt'
-url_filename = '../blogUrl.txt'
+targetFile = './viewAndRank.txt'
+url_filename = './blogUrl.txt'
 
 if os.path.exists(targetFile):
 	print(targetFile, ' is existed')

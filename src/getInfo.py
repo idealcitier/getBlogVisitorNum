@@ -19,8 +19,8 @@ def getInfo(filename):
 
 	view_num = view_result[0].split("=\"")[1]
 	rank_num = rank_result[0].split("=\"")[1]
-#	print("view_num=",view_num)
-#	print("rank_view=",rank_num)
+	print("view_num=",view_num)
+	print("rank_view=",rank_num)
 	return view_num, rank_num
 
 
